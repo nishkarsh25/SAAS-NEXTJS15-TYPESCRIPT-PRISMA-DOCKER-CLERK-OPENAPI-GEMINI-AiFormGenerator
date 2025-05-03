@@ -68,7 +68,12 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
       };
     }
 
-    
+    // Save the generated form to the database
+    try {
+      
+    } catch (dbError) {
+      
+    }
   } catch (error) {
     
   }
