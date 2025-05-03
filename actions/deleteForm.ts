@@ -10,7 +10,9 @@ export const deleteForm = async (formId: number) => {
     },
   });
 
-  
+  if (!form) {
+    return { success: false, message: "Form not found" };
+  }
 
  
 
