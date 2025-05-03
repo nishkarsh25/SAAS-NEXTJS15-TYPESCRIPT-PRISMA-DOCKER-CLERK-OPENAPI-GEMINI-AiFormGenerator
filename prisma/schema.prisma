@@ -19,5 +19,11 @@ model Form {
   FormSubmissions Submissions[]
 }
 
-
+model Submissions {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  formId    Int
+  content   Json
+  form      Form     @relation(fields: [formId], references: [id])
+}
 
