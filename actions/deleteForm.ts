@@ -17,5 +17,5 @@ export const deleteForm = async (formId: number) => {
   //make sure update the form list
   revalidatePath("/dashboard/forms");
 
-
+  return { success: true, message: "Form deleted successfully" };
 };
