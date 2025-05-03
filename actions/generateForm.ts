@@ -59,9 +59,13 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
 
     let formJsonData;
     try {
-      
+      formJsonData = JSON.parse(formContent);
     } catch (error) {
-      
+      console.log("Error parsing JSON", error);
+      return {
+        success: false,
+        message: "Generated form content is not valid JSON",
+      };
     }
 
     
