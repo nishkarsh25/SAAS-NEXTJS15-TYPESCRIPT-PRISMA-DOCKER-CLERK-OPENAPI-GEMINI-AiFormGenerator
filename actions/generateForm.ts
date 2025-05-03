@@ -85,9 +85,17 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
         data: form,
       };
     } catch (dbError) {
-      
+      console.error("Error saving form to database", dbError);
+      return {
+        success: false,
+        message: "Failed to save the form to the database",
+      };
     }
   } catch (error) {
-    
+    console.log("Error generating form", error);
+    return {
+      success: false,
+      message: "An error occurred while generating the form",
+    };
   }
 };
