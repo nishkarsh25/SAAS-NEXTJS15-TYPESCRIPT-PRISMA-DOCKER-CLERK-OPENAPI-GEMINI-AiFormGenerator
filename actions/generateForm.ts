@@ -70,7 +70,20 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
 
     // Save the generated form to the database
     try {
-      
+      const form = await prisma.form.create({
+        data: {
+          ownerId: user.id,
+          content: formJsonData ? formJsonData : null,
+        },
+      });
+
+      revalidatePath("/dashboard/forms"); // Optionally revalidate a path if necessary
+
+      return {
+        success: true,
+        message: "Form generated successfully",
+        data: form,
+      };
     } catch (dbError) {
       
     }
