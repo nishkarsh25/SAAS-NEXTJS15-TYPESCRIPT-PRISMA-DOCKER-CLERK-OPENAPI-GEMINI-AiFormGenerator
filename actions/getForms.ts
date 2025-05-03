@@ -9,7 +9,11 @@ export const getForms = async () => {
     return { success: false, message: "User not found" };
   }
 
-  
+  const forms = await prisma.form.findMany({
+    where: {
+      ownerId: user.id,
+    },
+  });
 
   
 
