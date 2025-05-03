@@ -5,7 +5,9 @@ export const getForms = async () => {
   const user = await currentUser();
   
   
-  
+  if (!user) {
+    return { success: false, message: "User not found" };
+  }
 
   
 
