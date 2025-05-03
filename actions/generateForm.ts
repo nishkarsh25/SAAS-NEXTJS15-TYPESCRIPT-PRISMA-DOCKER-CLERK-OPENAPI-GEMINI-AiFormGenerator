@@ -35,16 +35,34 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
 
     const description = result.data.description;
 
-    
+    if (!process.env.GEMINI_API_KEY) {
+      return { success: false, message: "GEMINI api key not found" };
+    }
 
-    
-    
+    const prompt =
+      "Create a json form with the following field: title, fields (If any field includes options, then keep it inside an array, not an object), button";
 
-    
+    // Request Gemini to generate the form content
+    const res = await model.generateContent(`${prompt} ${description}`);
+    let formContent = res.response.text();
 
-    
+    // Extract and clean up form content
+    formContent = formContent.substring(
+      formContent.indexOf("{"),
+      formContent.lastIndexOf("}") + 1
+    );
+    console.log("Gemini-generated the form ->", formContent);
 
-    
+    if (!formContent) {
+      return { success: false, message: "Failed to generate form content" };
+    }
+
+    let formJsonData;
+    try {
+      
+    } catch (error) {
+      
+    }
 
     
   } catch (error) {
