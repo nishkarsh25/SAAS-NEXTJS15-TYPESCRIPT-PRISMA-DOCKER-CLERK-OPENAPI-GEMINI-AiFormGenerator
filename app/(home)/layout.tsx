@@ -5,6 +5,8 @@ import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
-
+const layout = ({ children }: { children: React.ReactNode }) => {
+  
+};
 
 
