@@ -22,7 +22,16 @@ type Props = {
 const PricingPage: React.FC<Props> = ({ userId }) => {
   const router = useRouter();
 
-  
+  const checkoutHandler = async (price: number, plan: string) => {
+    if (!userId) {
+      router.push("/sign-in");
+    }
+    if (price === 0) {
+      return;
+    }
+
+    
+  };
 
   
 };
