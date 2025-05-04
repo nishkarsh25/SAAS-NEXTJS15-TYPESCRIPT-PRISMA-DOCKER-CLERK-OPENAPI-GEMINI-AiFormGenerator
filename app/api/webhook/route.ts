@@ -9,7 +9,9 @@ const relevantEvents = new Set([
 
 export async function POST(req: Request) {
 
-  
+  if (!process.env.WEBHOOK_ENDPOINT_SECRET) {
+    throw new Error("WEBHOOK_ENDPOINT_SECRET is not set");
+  }
 
   
 
