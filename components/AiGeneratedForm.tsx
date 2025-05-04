@@ -20,4 +20,19 @@ import { submitForm } from "@/actions/submitForm";
 
 type Props = { form: any; isEditMode: boolean };
 
+const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
+  const [successDialogOpen, setSuccessDialogOpen] = useState<boolean>(false);
+  const [formData, setFormData] = useState<any>({});
+
+  
+
+  
+
+  
+
+  
+
+  
+};
+
 
