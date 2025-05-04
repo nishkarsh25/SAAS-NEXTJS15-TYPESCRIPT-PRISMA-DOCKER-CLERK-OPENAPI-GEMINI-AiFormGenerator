@@ -13,7 +13,11 @@ const HomePage = async () => {
     redirect("/sign-in");
   }
 
-  
+  const forms = await getForms();
+  const totalNumberOfFormCreated = forms?.data?.length || (0 as number);
+  const isSubscribed = (await getUserSubscription(
+    user?.id as string
+  )) as boolean;
 
   
 };
