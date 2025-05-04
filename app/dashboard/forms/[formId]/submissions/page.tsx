@@ -7,7 +7,7 @@ const Submissions = async ({
 }: {
   params: Promise<{ formId: string }>;
 }) => {
-  
+  const formId = (await params).formId;
 
   
 
