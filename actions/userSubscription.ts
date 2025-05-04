@@ -1,6 +1,15 @@
 import prisma from "@/lib/prisma";
 
 export const createSubscription = async ({ userId }: { userId: string }) => {
-  
+  const subscription = await prisma.subscription.create({
+    data: {
+      userId,
+      subscribed: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  return subscription;
 };
 
