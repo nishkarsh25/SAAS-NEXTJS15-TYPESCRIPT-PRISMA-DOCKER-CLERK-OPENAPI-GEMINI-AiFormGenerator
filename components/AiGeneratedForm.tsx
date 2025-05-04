@@ -54,7 +54,19 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
     }
   };
 
-  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const data = await submitForm(form.id, formData);
+
+    if (data?.success) {
+      toast.success(data.message);
+      setFormData({});
+    }
+
+    if (!data?.success) {
+      toast.error(data?.message);
+    }
+  };
 
   
 };
