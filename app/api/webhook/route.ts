@@ -13,6 +13,8 @@ export async function POST(req: Request) {
     throw new Error("WEBHOOK_ENDPOINT_SECRET is not set");
   }
 
+  const secret = process.env.WEBHOOK_ENDPOINT_SECRET!;
+  const payload = await req.text(); // Read the raw body as text
   
 
   
