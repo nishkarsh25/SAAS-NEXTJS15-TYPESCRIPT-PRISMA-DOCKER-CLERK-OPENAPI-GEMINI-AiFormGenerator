@@ -9,7 +9,9 @@ import React from "react";
 
 const HomePage = async () => {
   const user = await currentUser();
-  
+  if (!user) {
+    redirect("/sign-in");
+  }
 
   
 
