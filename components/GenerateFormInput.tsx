@@ -58,6 +58,9 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
         placeholder="Write a prompt to generate form..."
         required
       />
+      {
+        isSubscribed && totalForms! <= MAX_FREE_FORM ? <SubmitButton /> : <Button disabled className="h-12"> <Lock/> Upgrade Plan</Button>
+      }
       
     </form>
   );
