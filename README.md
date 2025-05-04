@@ -62,40 +62,61 @@ This application streamlines the process of creating dynamic forms by leveraging
 ## Folder Structure
 
 ```
-📦 discuss-app/
-├── 📁 app/                       # Next.js app directory
-│   ├── 📁 api/                   # API routes (e.g., auth, REST endpoints)
-│   ├── 📁 topics/                # Dynamic topic routes (e.g., [slug]/page.tsx)
-│   ├── 📁 posts/                 # Post-related routes (e.g., [postId]/page.tsx)
-│   ├── 📁 search/                # Search result page
-│   └── layout.tsx               # Root layout for the app
-│   └── page.tsx                 # Home page
+## 📁 Folder Structure
+
+```bash
+saas-aiformgenerator/
+├── app/                          # App directory (Next.js routing)
+│   ├── layout.tsx               # Root layout
+│   ├── page.tsx                 # Landing page
+│   ├── dashboard/               # Protected dashboard routes
+│   │   ├── layout.tsx
+│   │   ├── myforms/             # Form listing & creation
+│   │   ├── submissions/         # Form submissions display
+│   │   ├── analytics/           # Analytics per form
+│   │   └── upgrade/             # Subscription upgrade
+│   └── success/                 # Success confirmation page
 │
-├── 📁 components/               # Reusable UI and logic components
-│   ├── 📁 ui/                   # Shared UI components (Button, Input, Dialog, etc.)
-│   ├── 📁 posts/                # Post-related components (PostList, PostCreateForm, etc.)
-│   ├── 📁 comments/             # Comment-related components (CommentList, CommentShow, etc.)
+├── components/                  # Reusable UI and functional components
+│   ├── AiGeneratedForm.tsx      # Dynamic AI-based form renderer
+│   ├── FormList.tsx             # Displays a list of user forms
+│   ├── GenerateFormInput.tsx    # Input for prompt-based form creation
+│   ├── Analytics.tsx            # Component to show stats
+│   ├── SubmissionDetails.tsx    # Renders form response data
+│   ├── PricingPage.tsx          # Shows Stripe pricing plans
+│   └── ui/                      # ShadCN-style UI components
+│       ├── button.tsx
+│       ├── card.tsx
+│       ├── dialog.tsx
+│       ├── progress.tsx
+│       └── sidebar.tsx
 │
-├── 📁 actions/                  # Server actions (e.g., createPost, createComment, createTopic)
+├── actions/                     # Server-side functions (Next.js actions)
+│   ├── getForms.ts              # Fetch user-specific forms
+│   ├── userSubscription.ts      # Subscription check
+│   └── generateForm.ts          # AI-powered form generation
 │
-├── 📁 lib/                      # Library code and helpers
-│   ├── 📁 query/                # Prisma query functions
-│   └── prisma.ts               # Prisma client instance
+├── lib/                         # Utility and third-party integrations
+│   ├── prisma.ts                # Prisma client instance
+│   ├── utils.ts                 # Constants & helper functions
+│   ├── openai.ts                # OpenAI API integration
+│   └── gemini.ts                # Gemini API integration
 │
-├── 📁 styles/                   # Global styles (if any)
-│
-├── 📁 public/                   # Static assets (images, icons, etc.)
-│
-├── 📁 prisma/                   # Prisma schema and migrations
+├── prisma/                      # Prisma database schema and migrations
 │   └── schema.prisma
 │
-├── 📁 types/                    # Custom TypeScript types (optional)
+├── public/                      # Static assets (e.g., images, favicon)
+│   └── favicon.ico
+│
+├── styles/                      # Global styles (optional)
+│   └── globals.css
 │
 ├── .env                         # Environment variables
-├── next.config.js               # Next.js configuration
+├── .dockerignore                # Docker ignore rules
+├── Dockerfile                   # Docker configuration
 ├── package.json
 ├── tsconfig.json
-└── README.md
+└── next.config.js
 
 ```
 
@@ -279,20 +300,40 @@ This project is made possible by the contributions and support of various indivi
 
 
 
-## Credits
+## 🙌 Credits
+
 This project uses the following open-source technologies:
 
 - [Next.js](https://nextjs.org/): A React framework for server-side rendering and static site generation.
-  
-- [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
-  
-- [Shadcn UI](https://shadcn.dev/): A component library for building user interfaces.
-  
-- [next-themes](https://github.com/pacocoursey/next-themes): A theme management library for Next.js applications.
-  
-- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
-  
-- [Lucide Icons](https://lucide.dev/): Icon library used for theme toggle icons (Sun and Moon).
+
+- [TypeScript](https://www.typescriptlang.org/): A strongly typed superset of JavaScript that compiles to plain JavaScript.
+
+- [React](https://reactjs.org/): A JavaScript library for building interactive user interfaces.
+
+- [Shadcn UI](https://ui.shadcn.dev/): Beautifully designed UI components built with Radix UI and Tailwind CSS.
+
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapid UI development.
+
+- [Lucide Icons](https://lucide.dev/): An open-source icon library used for UI icons.
+
+- [next-themes](https://github.com/pacocoursey/next-themes): Theme switching support for dark/light mode in Next.js apps.
+
+- [Prisma](https://www.prisma.io/): A next-generation ORM for Node.js and TypeScript.
+
+- [Supabase](https://supabase.com/): An open-source Firebase alternative used here for PostgreSQL database hosting.
+
+- [Clerk](https://clerk.dev/): Full-stack authentication and user management for Next.js apps.
+
+- [OpenAI API](https://platform.openai.com/): For generating form questions using AI from prompt input.
+
+- [Google Gemini API](https://deepmind.google/technologies/gemini/): Alternative AI model integration for content generation.
+
+- [Stripe](https://stripe.com/): Payment gateway used for managing user subscriptions.
+
+- [Zod](https://zod.dev/): TypeScript-first schema validation with static type inference.
+
+- [Vercel](https://vercel.com/): Deployment platform for frontend applications, especially well-suited for Next.js.
+
 
 ## Author
 
