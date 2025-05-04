@@ -25,5 +25,15 @@ export const pricingPlan: PricingPlan[] = [
       "Community access",
     ],
   },
-  
+  {
+    level: "Enterprise",
+    price: "$70/month",
+    services: [
+      "Unlimited Credits",
+      "Basic Supports",
+      "Limited Features",
+      "Community access",
+      "Monthly updates",
+    ],
+  },
 ];
