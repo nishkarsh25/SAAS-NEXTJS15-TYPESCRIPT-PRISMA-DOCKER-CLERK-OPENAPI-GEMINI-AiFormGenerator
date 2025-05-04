@@ -28,5 +28,9 @@ type Props = {
   isSubscribed:boolean
 }
 
+const HeroSection :React.FC<Props> = ({totalForms, isSubscribed}) => {
+  const [text, setText] = useState<string>("");
 
+  
+};
 
