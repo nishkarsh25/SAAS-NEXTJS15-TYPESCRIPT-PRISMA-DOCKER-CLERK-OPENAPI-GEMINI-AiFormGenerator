@@ -31,4 +31,4 @@ const Submissions = async ({
   );
 };
 
-
+export default Submissions;
