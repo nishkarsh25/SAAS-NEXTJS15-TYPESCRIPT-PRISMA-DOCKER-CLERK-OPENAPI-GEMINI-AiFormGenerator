@@ -17,9 +17,13 @@ export async function POST(req: Request) {
     );
   }
 
-  
+  const successUrl = process.env.NEXT_PUBLIC_BASE_URL
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}/success`
+    : null;
 
-  
+  const cancelUrl = process.env.NEXT_PUBLIC_BASE_URL
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}`
+    : null;
 
   
 
