@@ -19,7 +19,26 @@ const UpgradeButton : React.FC<Props> = async ({userId}) => {
 
   return (
     <div className="m-3">
-      
+      {isSubscribed ? (
+        <span className="text-sm">
+          You have a subscription plan, you are eligble to create more forms
+        </span>
+      ) : (
+        <>
+          <Progress value={percentage}/>
+          <p>
+            2 out of 3 forms generated.{" "}
+            <Link
+              href={"/dashboard/upgrade"}
+              className="text-blue-600 underline"
+            >
+              {" "}
+              Upgrade{" "}
+            </Link>{" "}
+            to generate more forms
+          </p>
+        </>
+      )}
     </div>
   );
 };
