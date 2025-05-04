@@ -17,6 +17,14 @@ import React from "react";
 const MyForm = async () => {
   const forms = await getForms();
 
-  
+  return (
+    <div>
+      <section className="flex items-center justify-between max-w-7xl mx-auto mb-4">
+        <h1 className="font-bold text-xl">My Forms</h1>
+        
+      </section>
+      
+    </div>
+  );
 };
 
