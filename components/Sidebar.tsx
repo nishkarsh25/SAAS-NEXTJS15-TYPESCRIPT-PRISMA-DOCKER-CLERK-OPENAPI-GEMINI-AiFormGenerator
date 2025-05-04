@@ -17,7 +17,11 @@ import Link from "next/link";
 import UpgradeButton from "./UpgradeButton";
 import { currentUser } from "@clerk/nextjs/server";
 
-
+type MenuItems = {
+  title: string;
+  url: string;
+  icon: JSX.Element;
+};
 
 
 
