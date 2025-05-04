@@ -37,6 +37,11 @@ const items: MenuItems[] = [
 ];
 
 const DashboardSidebar = async () => {
-  
+  const user = await currentUser();
+  return (
+    <Sidebar>
+      
+    </Sidebar>
+  );
 };
 
