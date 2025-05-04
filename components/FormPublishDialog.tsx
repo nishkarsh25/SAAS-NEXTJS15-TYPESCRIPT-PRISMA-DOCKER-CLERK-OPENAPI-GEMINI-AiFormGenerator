@@ -24,7 +24,11 @@ const FormPublishDialog: React.FC<Props> = ({ formId, open, onOpenChange }) => {
     navigator.clipboard.writeText(link);
     toast.success("Copied to clipboard");
   };
-  
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      
+    </Dialog>
+  );
 };
 
 
