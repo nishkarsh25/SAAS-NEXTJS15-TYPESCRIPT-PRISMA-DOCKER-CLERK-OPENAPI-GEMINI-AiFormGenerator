@@ -4,3 +4,26 @@ export type PricingPlan = {
   services: string[];
 };
 
+export const pricingPlan: PricingPlan[] = [
+  {
+    level: "Free",
+    price: "$0/month",
+    services: [
+      "3 Free Credits",
+      "Basic Supports",
+      "Limited Features",
+      "Community access",
+    ],
+  },
+  {
+    level: "Pro",
+    price: "$29/month",
+    services: [
+      "Unlimited Credits",
+      "Basic Supports",
+      "Limited Features",
+      "Community access",
+    ],
+  },
+  
+];
