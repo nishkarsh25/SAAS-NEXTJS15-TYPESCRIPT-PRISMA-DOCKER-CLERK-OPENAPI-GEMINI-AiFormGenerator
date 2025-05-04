@@ -43,7 +43,7 @@ export const submitForm = async (formId: number, formData: any) => {
       },
     });
 
-    
+    return { success: true, message: "Form submitted successfully" };
   } catch (error) {
     
   }
