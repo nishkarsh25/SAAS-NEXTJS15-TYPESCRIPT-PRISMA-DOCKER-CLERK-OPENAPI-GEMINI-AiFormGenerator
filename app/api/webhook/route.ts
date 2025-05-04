@@ -17,11 +17,18 @@ export async function POST(req: Request) {
   const payload = await req.text(); // Read the raw body as text
   const sig = req.headers.get("stripe-signature") as string; // Retrieve the signature from headers
 
-  
+  if (!sig) {
+    return NextResponse.json({ error: "Missing Stripe signature header" }, { status: 400 });
+  }
 
-  
+  let event: Stripe.Event;
 
- 
+  try {
+    // Verify and construct the event using the raw body, signature, and secret
+    event = stripe.webhooks.constructEvent(payload, sig, secret);
+  } catch (err) {
+    
+  }
 
   
 
