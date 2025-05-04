@@ -13,5 +13,12 @@ type Props = {
   index: number;
 };
 
-
+const SubmissionsDetails: React.FC<Props> = ({ submission, index }) => {
+ 
+  return (
+    <div className="mt-8">
+      
+    </div>
+  );
+};
 
