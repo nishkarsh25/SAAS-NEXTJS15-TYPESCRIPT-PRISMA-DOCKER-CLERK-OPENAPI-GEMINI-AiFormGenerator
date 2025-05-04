@@ -37,7 +37,17 @@ export async function POST(req: Request) {
   // Handle relevant Stripe events
   if (relevantEvents.has(event.type)) {
     try {
-      
+      switch (event.type) {
+        case "checkout.session.completed": {
+          const session = event.data.object as Stripe.Checkout.Session; 
+          const userId = session.metadata?.userId as string;
+          // Call your function to create a subscription 
+          await createSubscription({ userId }); 
+          break;
+        }
+        default:
+          break;
+      }
     } catch (error) {
       
     }
