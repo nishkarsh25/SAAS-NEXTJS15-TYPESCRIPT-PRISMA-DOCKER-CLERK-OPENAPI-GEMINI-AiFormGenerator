@@ -19,5 +19,12 @@ type Props = {
   userId: string | undefined;
 };
 
+const PricingPage: React.FC<Props> = ({ userId }) => {
+  const router = useRouter();
+
+  
+
+  
+};
 
 
