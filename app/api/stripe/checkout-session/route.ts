@@ -6,7 +6,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 export async function POST(req: Request) {
   const { price, userId, plan } = await req.json();
 
-  
+  if (!userId) {
+    return NextResponse.json(
+      {
+        error: "User not found",
+      },
+      {
+        status: 400,
+      }
+    );
+  }
 
   
 
