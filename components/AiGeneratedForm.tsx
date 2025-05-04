@@ -18,6 +18,6 @@ import FormPublishDialog from "./FormPublishDialog";
 import toast from "react-hot-toast";
 import { submitForm } from "@/actions/submitForm";
 
-
+type Props = { form: any; isEditMode: boolean };
 
 
