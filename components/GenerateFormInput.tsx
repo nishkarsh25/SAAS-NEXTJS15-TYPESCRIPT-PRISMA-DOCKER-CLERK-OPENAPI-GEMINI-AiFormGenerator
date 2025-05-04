@@ -25,7 +25,18 @@ type Props = {
   isSubscribed?:boolean;
 }
 
+const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) => {
+  const [description, setDescription] = useState<string | undefined>("");
+  const [state, formAction] = useActionState(generateForm, initialState);
+  
 
+  
+  
+
+ 
+ 
+ 
+};
 
 
 
