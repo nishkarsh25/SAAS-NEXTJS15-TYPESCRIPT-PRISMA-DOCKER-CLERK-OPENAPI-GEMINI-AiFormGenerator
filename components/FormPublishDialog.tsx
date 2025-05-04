@@ -16,6 +16,11 @@ type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
+const FormPublishDialog: React.FC<Props> = ({ formId, open, onOpenChange }) => {
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
+  
+  
+};
 
 
