@@ -43,3 +43,4 @@ const UpgradeButton : React.FC<Props> = async ({userId}) => {
   );
 };
 
+export default UpgradeButton;
