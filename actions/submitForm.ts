@@ -11,7 +11,9 @@ export const submitForm = async (formId: number, formData: any) => {
       return { success: false, message: "User not found" };
     }
 
-    
+    if (!formId) {
+      return { success: false, message: "Form id not found" };
+    }
 
     
 
