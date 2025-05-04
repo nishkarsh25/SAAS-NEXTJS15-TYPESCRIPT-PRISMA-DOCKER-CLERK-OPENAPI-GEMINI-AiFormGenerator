@@ -6,7 +6,7 @@ const page = async () => {
   const user = await currentUser();
   return (
     <div>
-       
+        <PricingPage userId = {user?.id}/>
     </div>
   )
 }
