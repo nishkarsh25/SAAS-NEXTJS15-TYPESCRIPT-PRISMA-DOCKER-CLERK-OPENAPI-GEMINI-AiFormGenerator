@@ -18,7 +18,9 @@ const Submissions = async ({
     },
   });
 
-  
+  if (!submissions || submissions.length === 0) {
+    return <h1>No submissions found for form id {formId}</h1>;
+  }
 
   
 };
