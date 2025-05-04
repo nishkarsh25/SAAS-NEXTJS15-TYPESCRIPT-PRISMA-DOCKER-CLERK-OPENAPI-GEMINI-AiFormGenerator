@@ -37,7 +37,15 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
     setDescription(text);
   }, [text]);
 
- 
+  useEffect(() => {
+    if (state.success) {
+     
+      toast(state.message);
+      router.push(`/dashboard/forms/edit/${state.data.id}`);
+    } else if (state.message) {
+      toast.error(state.message);
+    }
+  }, [router, state]);
  
  
 };
