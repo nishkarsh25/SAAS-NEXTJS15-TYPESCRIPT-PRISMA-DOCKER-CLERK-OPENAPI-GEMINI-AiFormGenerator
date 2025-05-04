@@ -30,7 +30,14 @@ export const publishForm = async (formId: number) => {
       return { success: false, message: "Unauthorized" };
     }
 
-    
+    await prisma.form.update({
+      where: {
+        id: formId,
+      },
+      data: {
+        published: true,
+      },
+    });
   } catch (error) {
     
   }
