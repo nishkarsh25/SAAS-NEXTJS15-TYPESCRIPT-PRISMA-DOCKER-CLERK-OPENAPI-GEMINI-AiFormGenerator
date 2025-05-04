@@ -21,9 +21,16 @@ export const submitForm = async (formId: number, formData: any) => {
       },
     });
 
-    
+    if (!form) {
+      return { success: false, message: "form not found" };
+    }
 
-    
+    await prisma.submissions.create({
+      data: {
+        formId,
+        content: formData,
+      },
+    });
 
     
 
