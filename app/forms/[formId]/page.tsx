@@ -34,4 +34,4 @@ const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
   );
 };
 
-
+export default Edit;
