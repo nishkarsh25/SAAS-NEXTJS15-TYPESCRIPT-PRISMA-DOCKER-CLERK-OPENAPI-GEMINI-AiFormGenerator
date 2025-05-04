@@ -12,7 +12,9 @@ export const publishForm = async (formId: number) => {
       return { success: false, message: "User not found" };
     }
 
-    
+    if (!formId) {
+      return { success: false, message: "Form id not found" };
+    }
 
     
 
