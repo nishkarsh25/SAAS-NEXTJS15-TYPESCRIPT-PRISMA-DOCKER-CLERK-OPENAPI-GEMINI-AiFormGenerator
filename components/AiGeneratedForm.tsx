@@ -44,7 +44,15 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
     }));
   };
 
-  
+  const handlePublish = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isEditMode) {
+      const res = await publishForm(form.id);
+      console.log(res);
+
+      setSuccessDialogOpen(true);
+    }
+  };
 
   
 
