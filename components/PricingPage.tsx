@@ -49,7 +49,11 @@ const PricingPage: React.FC<Props> = ({ userId }) => {
     }
   };
 
-  
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 
