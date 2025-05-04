@@ -116,4 +116,4 @@ const PricingPage: React.FC<Props> = ({ userId }) => {
   );
 };
 
-
+export default PricingPage;
