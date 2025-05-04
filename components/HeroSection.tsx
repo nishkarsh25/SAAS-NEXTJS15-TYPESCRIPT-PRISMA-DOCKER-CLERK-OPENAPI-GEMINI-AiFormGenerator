@@ -60,3 +60,4 @@ const HeroSection :React.FC<Props> = ({totalForms, isSubscribed}) => {
   );
 };
 
+export default HeroSection;
