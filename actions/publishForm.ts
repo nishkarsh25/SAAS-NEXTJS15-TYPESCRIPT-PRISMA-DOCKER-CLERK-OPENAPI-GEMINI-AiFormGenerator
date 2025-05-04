@@ -16,9 +16,15 @@ export const publishForm = async (formId: number) => {
       return { success: false, message: "Form id not found" };
     }
 
-    
+    const form = await prisma.form.findUnique({
+      where: {
+        id: formId,
+      },
+    });
 
-    
+    if (!form) {
+      return { success: false, message: "Form not found" };
+    }
 
 
     
