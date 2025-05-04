@@ -6,7 +6,9 @@ import React from "react";
 const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
   const formId = (await params).formId;
 
-  
+  if (!formId) {
+    return <h1>No form id found for id {formId}</h1>;
+  }
 
   
 
