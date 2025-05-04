@@ -67,4 +67,4 @@ const FormList: React.FC<Props> = ({ form }) => {
   );
 };
 
-
+export default FormList;
