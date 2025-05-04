@@ -23,7 +23,18 @@ type MenuItems = {
   icon: JSX.Element;
 };
 
-
+const items: MenuItems[] = [
+  {
+    title: "Analytics",
+    url: "/dashboard/analytics",
+    icon: <ChartSpline />,
+  },
+  {
+    title: "My Forms",
+    url: "/dashboard/forms",
+    icon: <ClipboardList />,
+  },
+];
 
 
 
