@@ -9,5 +9,18 @@ type Props = {
   userId:string | undefined;
 }
 
+const UpgradeButton : React.FC<Props> = async ({userId}) => {
+  const forms = await getForms(); 
+  const isSubscribed = await getUserSubscription(userId!);
 
+  const formsGenerated = forms?.data?.length;
+  const percentage = (formsGenerated! / MAX_FREE_FORM) * 100;
+
+
+  return (
+    <div className="m-3">
+      
+    </div>
+  );
+};
 
