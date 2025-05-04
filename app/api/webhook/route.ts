@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
   const secret = process.env.WEBHOOK_ENDPOINT_SECRET!;
   const payload = await req.text(); // Read the raw body as text
-  
+  const sig = req.headers.get("stripe-signature") as string; // Retrieve the signature from headers
 
   
 
