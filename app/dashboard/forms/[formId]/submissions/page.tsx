@@ -22,7 +22,13 @@ const Submissions = async ({
     return <h1>No submissions found for form id {formId}</h1>;
   }
 
-  
+  return (
+    <div>
+      {submissions.map((submission: any, index: number) => (
+        <SubmissionsDetails key={index} submission={submission} index={index} />
+      ))}
+    </div>
+  );
 };
 
 
