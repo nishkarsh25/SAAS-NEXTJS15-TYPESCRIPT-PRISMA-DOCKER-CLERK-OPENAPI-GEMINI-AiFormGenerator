@@ -26,6 +26,9 @@ export const publishForm = async (formId: number) => {
       return { success: false, message: "Form not found" };
     }
 
+    if (form.ownerId !== user.id) {
+      return { success: false, message: "Unauthorized" };
+    }
 
     
   } catch (error) {
