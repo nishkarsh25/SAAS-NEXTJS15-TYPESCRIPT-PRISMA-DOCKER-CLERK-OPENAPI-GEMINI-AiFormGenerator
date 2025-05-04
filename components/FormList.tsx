@@ -23,7 +23,14 @@ type Props = {
 const FormList: React.FC<Props> = ({ form }) => {
   const router = useRouter();
 
-  
+  const delelteFormHandler = async (formId: number) => {
+    const data = await deleteForm(formId);
+    if (data.success) {
+      toast.success(data.message);
+    } else {
+      toast.error(data.message);
+    }
+  };
 
   
 };
