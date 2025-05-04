@@ -161,7 +161,11 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
         ))}
         <Button type="submit">{isEditMode ? "Publish" : "Submit"}</Button>
       </form>
-      
+      <FormPublishDialog
+        formId={form.id}
+        open={successDialogOpen}
+        onOpenChange={setSuccessDialogOpen}
+      />
     </div>
   );
 };
