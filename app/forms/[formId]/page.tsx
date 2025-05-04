@@ -16,7 +16,7 @@ const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
     },
   });
 
-  
+  console.log(form);
 
   
 };
