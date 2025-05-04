@@ -68,3 +68,16 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
 
 export default GenerateFormInput;
 
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button
+      disabled={pending}
+      className="h-12 bg-gradient-to-r from-blue-500 to bg-purple-600"
+    >
+      <Sparkles className="mr-2" />
+      {pending ? <span>Generating form...</span> : "Generate Form"}
+    </Button>
+  );
+};
