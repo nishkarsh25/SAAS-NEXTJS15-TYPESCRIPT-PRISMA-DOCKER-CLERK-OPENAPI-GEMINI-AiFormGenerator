@@ -28,9 +28,11 @@ type Props = {
 const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) => {
   const [description, setDescription] = useState<string | undefined>("");
   const [state, formAction] = useActionState(generateForm, initialState);
-  
+  const router = useRouter();
 
-  
+  const changeEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value);
+  };
   
 
  
