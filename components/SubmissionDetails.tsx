@@ -8,7 +8,10 @@ import {
   TableRow,
 } from "./ui/table";
 
-
+type Props = {
+  submission: any;
+  index: number;
+};
 
 
 
