@@ -39,6 +39,10 @@ export const publishForm = async (formId: number) => {
       },
     });
   } catch (error) {
-    
+    console.log("Error publishing the form", error);
+    return {
+      success: false,
+      message: "An error occured while publishing the form",
+    };
   }
 };
