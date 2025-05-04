@@ -32,7 +32,16 @@ export const submitForm = async (formId: number, formData: any) => {
       },
     });
 
-    
+    await prisma.form.update({
+      where: {
+        id: formId,
+      },
+      data: {
+        submissions: {
+          increment: 1,
+        },
+      },
+    });
 
     
   } catch (error) {
