@@ -6,6 +6,12 @@ type Props = {
   numberOfSubmissions: number,
 };
 
-
+const Analytics: React.FC<Props> = ({ numberOfSubmissions }) => {
+  return (
+    <div>
+      
+    </div>
+  );
+};
 
 
