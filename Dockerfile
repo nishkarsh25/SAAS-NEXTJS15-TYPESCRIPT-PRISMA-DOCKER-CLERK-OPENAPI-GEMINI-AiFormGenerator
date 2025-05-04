@@ -52,6 +52,7 @@ ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
 # Build the nextjs app for production
 RUN npm run build
 
-
+# Expose port 3000 for the application
+EXPOSE 3000
 
 
