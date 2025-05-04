@@ -31,6 +31,10 @@ type Props = {
 const HeroSection :React.FC<Props> = ({totalForms, isSubscribed}) => {
   const [text, setText] = useState<string>("");
 
-  
+  return (
+    <section>
+      
+    </section>
+  );
 };
 
