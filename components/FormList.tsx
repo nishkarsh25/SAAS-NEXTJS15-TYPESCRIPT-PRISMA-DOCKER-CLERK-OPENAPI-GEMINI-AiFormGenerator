@@ -34,7 +34,35 @@ const FormList: React.FC<Props> = ({ form }) => {
 
   return (
     <div>
-      
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>{form.content.title}</CardTitle>
+          <CardDescription>
+            Deploy your new project in one-click.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Link href={`/dashboard/forms/${form.id}/submissions`}>
+            <Button variant={"link"} className="text-blue-600">
+              Submission - {form.submissions}
+            </Button>{" "}
+          </Link>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button
+            variant="outline"
+            onClick={() => router.push(`/dashboard/forms/edit/${form.id}`)}
+          >
+            <Edit2 /> Edit
+          </Button>
+          <Button
+            onClick={() => delelteFormHandler(form.id)}
+            variant={"destructive"}
+          >
+            Delete
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   );
 };
