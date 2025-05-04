@@ -23,4 +23,4 @@ const Analytics: React.FC<Props> = ({ numberOfSubmissions }) => {
   );
 };
 
-
+export default Analytics;
