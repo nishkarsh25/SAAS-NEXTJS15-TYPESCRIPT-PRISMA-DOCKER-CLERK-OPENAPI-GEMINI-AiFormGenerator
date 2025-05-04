@@ -37,7 +37,12 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
     }));
   };
 
-  
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData((prev: any) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   
 
