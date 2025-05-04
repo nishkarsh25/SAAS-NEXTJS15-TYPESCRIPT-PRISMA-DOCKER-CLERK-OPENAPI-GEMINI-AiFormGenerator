@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 const HomePage = async () => {
+  const user = await currentUser();
   
 
   
