@@ -40,7 +40,30 @@ const DashboardSidebar = async () => {
   const user = await currentUser();
   return (
     <Sidebar>
-      
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel className="flex items-center justify-between">
+            <Link href={"/"} className="font-bold text-lg">
+              Formify.ai-Nishkarsh
+            </Link>
+          </SidebarGroupLabel>
+          <Separator className="my-2"/>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {items.map((item: MenuItems, index: number) => (
+                <SidebarMenuItem key={index}>
+                  <SidebarMenuButton asChild>
+                    <Link href={item.url}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
       
     </Sidebar>
   );
