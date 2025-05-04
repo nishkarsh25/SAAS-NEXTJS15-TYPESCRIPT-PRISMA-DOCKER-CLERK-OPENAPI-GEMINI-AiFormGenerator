@@ -47,7 +47,9 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
     }
   }, [router, state]);
  
- 
+  return (
+    
+  );
 };
 
 
