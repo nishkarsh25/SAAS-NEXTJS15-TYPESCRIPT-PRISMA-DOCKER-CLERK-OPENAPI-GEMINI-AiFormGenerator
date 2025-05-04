@@ -159,7 +159,7 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
             ) : null}
           </div>
         ))}
-        
+        <Button type="submit">{isEditMode ? "Publish" : "Submit"}</Button>
       </form>
       
     </div>
