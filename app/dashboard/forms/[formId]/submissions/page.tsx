@@ -9,7 +9,14 @@ const Submissions = async ({
 }) => {
   const formId = (await params).formId;
 
-  
+  const submissions = await prisma.submissions.findMany({
+    where: {
+      formId: Number(formId),
+    },
+    include: {
+      form: true,
+    },
+  });
 
   
 
