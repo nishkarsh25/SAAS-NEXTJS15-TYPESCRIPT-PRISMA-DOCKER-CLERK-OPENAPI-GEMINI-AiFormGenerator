@@ -15,7 +15,15 @@ type InitialState = {
   data?: any;
 };
 
-
+const initialState: InitialState = {
+  message: "",
+  success: false,
+};
+type Props = {
+  text?:string;
+  totalForms?:number;
+  isSubscribed?:boolean;
+}
 
 
 
