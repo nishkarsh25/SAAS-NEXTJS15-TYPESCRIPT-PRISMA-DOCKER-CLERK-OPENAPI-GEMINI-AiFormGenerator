@@ -13,3 +13,6 @@ export const createSubscription = async ({ userId }: { userId: string }) => {
   return subscription;
 };
 
+export const getUserSubscription = async (userId:string) => {
+    
+ }
