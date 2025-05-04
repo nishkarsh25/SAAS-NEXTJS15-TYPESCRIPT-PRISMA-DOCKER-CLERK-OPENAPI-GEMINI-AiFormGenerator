@@ -39,7 +39,11 @@ const MyForm = async () => {
           </DialogContent>
         </Dialog>
       </section>
-      
+      <div className="grid grid-cols-4 gap-2">
+        {forms?.data?.map((form:Form, index: number) => (
+          <FormList key={index} form={form} />
+        ))}
+      </div>
     </div>
   );
 };
