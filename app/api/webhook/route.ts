@@ -49,7 +49,11 @@ export async function POST(req: Request) {
           break;
       }
     } catch (error) {
-      
+      console.log("Error processing event", error);
+      return NextResponse.json(
+        { error: `Error processing event ${event.type}` },
+        { status: 500 }
+      );
     }
   }
 
