@@ -53,4 +53,4 @@ const FormPublishDialog: React.FC<Props> = ({ formId, open, onOpenChange }) => {
   );
 };
 
-
+export default FormPublishDialog;
