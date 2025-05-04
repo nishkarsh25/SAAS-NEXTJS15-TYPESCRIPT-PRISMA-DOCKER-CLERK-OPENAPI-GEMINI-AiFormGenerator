@@ -30,7 +30,23 @@ const PricingPage: React.FC<Props> = ({ userId }) => {
       return;
     }
 
-    
+    try {
+      const response = await axios.post("/api/stripe/checkout-session", {
+        price,
+        userId,
+        plan,
+      });
+
+      const { url } = response.data; // Destructuring session URL from backend response
+
+      if (url) {
+        router.push(url); // Redirect to the Stripe-hosted checkout page using the URL
+      } else {
+        console.error("Checkout URL not found");
+      }
+    } catch (error) {
+      console.error("Error initiating checkout:", error);
+    }
   };
 
   
