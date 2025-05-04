@@ -38,3 +38,4 @@ const SubmissionsDetails: React.FC<Props> = ({ submission, index }) => {
   );
 };
 
+export default SubmissionsDetails;
