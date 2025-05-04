@@ -66,5 +66,5 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
   );
 };
 
-
+export default GenerateFormInput;
 
