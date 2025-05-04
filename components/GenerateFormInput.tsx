@@ -9,7 +9,11 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { MAX_FREE_FORM } from "@/lib/utils";
 
-
+type InitialState = {
+  message: string;
+  success: boolean;
+  data?: any;
+};
 
 
 
