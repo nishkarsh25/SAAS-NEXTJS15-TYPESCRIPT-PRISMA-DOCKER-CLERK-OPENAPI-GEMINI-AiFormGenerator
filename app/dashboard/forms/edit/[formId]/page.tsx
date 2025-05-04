@@ -20,7 +20,16 @@ const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
 
   return (
     <Card>
-      
+      <CardHeader>
+        <CardTitle>
+          <h1 className="font-bold text-2xl text-center">
+            {form?.content.title}
+          </h1>
+        </CardTitle>
+        <CardContent>
+          <AiGeneratedForm form={form} isEditMode={true} />
+        </CardContent>
+      </CardHeader>
     </Card>
   );
 };
