@@ -15,7 +15,9 @@ import { CheckCircle } from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-
+type Props = {
+  userId: string | undefined;
+};
 
 
 
