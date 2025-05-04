@@ -15,9 +15,13 @@ const page = async () => {
     },
   });
 
-  
+  const numberOfSubmissions = res._sum.submissions || 0;
 
-  
+  return (
+    <div>
+      <Analytics numberOfSubmissions={numberOfSubmissions}/>
+    </div>
+  );
 };
 
 
