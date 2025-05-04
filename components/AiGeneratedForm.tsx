@@ -24,7 +24,18 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
   const [successDialogOpen, setSuccessDialogOpen] = useState<boolean>(false);
   const [formData, setFormData] = useState<any>({});
 
-  
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      | React.FormEvent<HTMLButtonElement>
+  ) => {
+    const target = e.target as HTMLInputElement; // Ensure proper type assertion
+    const { name, value, type, checked } = target;
+    setFormData((prev: any) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
   
 
