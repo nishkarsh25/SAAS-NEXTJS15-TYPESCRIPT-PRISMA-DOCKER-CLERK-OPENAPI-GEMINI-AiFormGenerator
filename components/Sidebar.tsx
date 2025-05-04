@@ -71,3 +71,4 @@ const DashboardSidebar = async () => {
   );
 };
 
+export default DashboardSidebar;
