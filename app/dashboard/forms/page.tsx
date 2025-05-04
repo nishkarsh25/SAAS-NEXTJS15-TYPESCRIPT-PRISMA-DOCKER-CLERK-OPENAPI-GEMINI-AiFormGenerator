@@ -14,4 +14,9 @@ import { Form } from "@/types/form";
 import { Plus } from "lucide-react";
 import React from "react";
 
+const MyForm = async () => {
+  const forms = await getForms();
+
+  
+};
 
