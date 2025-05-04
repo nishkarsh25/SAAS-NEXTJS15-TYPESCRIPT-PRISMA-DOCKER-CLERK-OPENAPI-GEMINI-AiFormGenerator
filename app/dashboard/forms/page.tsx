@@ -48,3 +48,4 @@ const MyForm = async () => {
   );
 };
 
+export default MyForm;
