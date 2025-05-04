@@ -48,7 +48,18 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
   }, [router, state]);
  
   return (
-    
+    <form action={formAction} className="flex items-center gap-4 my-8">
+      <Input
+        id="description"
+        name="description"
+        value={description}
+        onChange={changeEventHandler}
+        type="text"
+        placeholder="Write a prompt to generate form..."
+        required
+      />
+      
+    </form>
   );
 };
 
