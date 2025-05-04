@@ -13,7 +13,9 @@ RUN npm install
 # Copy the rest of your application code
 COPY . .
 
-
+# Install Prisma globally and generate Prisma client
+RUN npm install -g prisma
+RUN npx prisma generate
 
 
 
