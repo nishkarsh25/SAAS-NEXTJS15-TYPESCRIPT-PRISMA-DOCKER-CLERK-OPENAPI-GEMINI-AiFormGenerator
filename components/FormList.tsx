@@ -16,7 +16,9 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { deleteForm } from "@/actions/deleteForm";
 
-
+type Props = {
+  form: Form;
+};
 
 
 
