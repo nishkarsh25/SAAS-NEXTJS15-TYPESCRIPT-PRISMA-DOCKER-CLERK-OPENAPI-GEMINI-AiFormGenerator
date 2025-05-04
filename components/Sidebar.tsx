@@ -64,7 +64,9 @@ const DashboardSidebar = async () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      
+      <SidebarFooter>
+        <UpgradeButton userId={user?.id}/>
+      </SidebarFooter>
     </Sidebar>
   );
 };
