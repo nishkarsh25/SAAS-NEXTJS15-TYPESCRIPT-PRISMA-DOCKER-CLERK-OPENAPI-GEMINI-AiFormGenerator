@@ -15,7 +15,11 @@ export const submitForm = async (formId: number, formData: any) => {
       return { success: false, message: "Form id not found" };
     }
 
-    
+    const form = await prisma.form.findUnique({
+      where: {
+        id: formId,
+      },
+    });
 
     
 
