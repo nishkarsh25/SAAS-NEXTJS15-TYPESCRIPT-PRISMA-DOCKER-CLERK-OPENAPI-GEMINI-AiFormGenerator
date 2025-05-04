@@ -33,7 +33,9 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
   const changeEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setDescription(e.target.value);
   };
-  
+  useEffect(() => {
+    setDescription(text);
+  }, [text]);
 
  
  
