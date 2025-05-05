@@ -59,7 +59,7 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
         required
       />
       {
-        isSubscribed && totalForms! <= MAX_FREE_FORM ? <SubmitButton /> : <Button disabled className="h-12"> <Lock/> Upgrade Plan</Button>
+         totalForms! <= MAX_FREE_FORM ? <SubmitButton /> : <Button disabled className="h-12"> <Lock/> Upgrade Plan</Button>
       }
       
     </form>
