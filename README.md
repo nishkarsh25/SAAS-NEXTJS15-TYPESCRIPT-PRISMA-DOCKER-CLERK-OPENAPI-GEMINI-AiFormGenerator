@@ -57,7 +57,7 @@ This application streamlines the process of creating dynamic forms by leveraging
 
 ## Live Demo
 
-- You can try out the live demo of the discuss app [here](https://nextjs-15-react-19-typescript-routing-caching-zod-mgkmkwio2.vercel.app/).
+- You can try out the live demo of the discuss app [here](https://saas-nextjs-15-typescript-prisma-docker-clerk-openap-aywy56edu.vercel.app/).
 
 ## Folder Structure
 
