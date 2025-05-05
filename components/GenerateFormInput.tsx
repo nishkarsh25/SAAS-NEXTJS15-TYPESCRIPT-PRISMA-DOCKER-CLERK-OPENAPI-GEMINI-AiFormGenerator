@@ -46,6 +46,8 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
       toast.error(state.message);
     }
   }, [router, state]);
+
+  isSubscribed=true //Generally it must be received through stripe webhook but for now lets go with it assigning static value
  
   return (
     <form action={formAction} className="flex items-center gap-4 my-8">
@@ -59,7 +61,7 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
         required
       />
       {
-         totalForms! <= MAX_FREE_FORM ? <SubmitButton /> : <Button disabled className="h-12"> <Lock/> Upgrade Plan</Button>
+         isSubscribed && totalForms! <= MAX_FREE_FORM ? <SubmitButton /> : <Button disabled className="h-12"> <Lock/> Upgrade Plan</Button>
       }
       
     </form>
