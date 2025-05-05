@@ -27,9 +27,6 @@ export async function POST(req: Request) {
   const successUrl = `${baseUrl}/success`;
   const cancelUrl = `${baseUrl}`;
 
-  console.log(headers);
-  
-
   if (!successUrl || !cancelUrl) {
     return NextResponse.json(
       {
