@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
+import { log } from "console";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -17,13 +18,17 @@ export async function POST(req: Request) {
     );
   }
 
-  const successUrl = process.env.NEXT_PUBLIC_BASE_URL
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}/success`
-    : null;
+  // ✅ Dynamically get base URL from the request
+  const headers = req.headers;
+  const protocol = headers.get("x-forwarded-proto") || "http";
+  const host = headers.get("host");
+  const baseUrl = `${protocol}://${host}`;
 
-  const cancelUrl = process.env.NEXT_PUBLIC_BASE_URL
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}`
-    : null;
+  const successUrl = `${baseUrl}/success`;
+  const cancelUrl = `${baseUrl}`;
+
+  console.log(headers);
+  
 
   if (!successUrl || !cancelUrl) {
     return NextResponse.json(
