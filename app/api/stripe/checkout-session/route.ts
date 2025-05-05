@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
-import { log } from "console";
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
